@@ -1,0 +1,43 @@
+#ratelimit
+ratelimit
+#rate limiter
+ratelimiter
+#backoff
+backoff
+# yaml package - pyaml
+pyyaml
+# requests submodules
+certifi
+charset-normalizer
+idna 
+requests 
+urllib3
+#pandas submodules
+numpy 
+pandas
+python-dateutil
+pytz
+six
+#aiohttp sub modules
+aiohttp
+async-timeout
+attrs
+chardet 
+multidict 
+typing-extensions 
+yarl
+#tabulate 
+tabulate
+#openpyxl
+et-xmlfile
+openpyxl
+#xlsxwriter
+xlsxwriter
+#click 
+click
+#termcolor
+termcolor
+netmiko
+aiohttp-socks
+httpx
+tqdm
