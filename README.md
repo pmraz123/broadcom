@@ -19,8 +19,8 @@ cd velo_sdwan_scripts
 ```
 ### Creating Python virtual environment - test
 
-
 python3 -m venv venv
+```
 source venv/bin/activate
 
 ### Install packages: 
