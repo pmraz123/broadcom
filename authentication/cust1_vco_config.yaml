@@ -1,0 +1,27 @@
+# VCO Connectivity Info
+VCO_HOST: vco-domain-name.com
+CUSTOMER_NAME: "Customer1"
+VCO_PORT: 443
+VCO_AUTHENTICATION: "yaml"
+
+# VCO_AUTHENTICATION == "yaml" - > username and password are taken from yaml, to do so please set VCO_TOKEN
+# VCO_AUTHENTICATION == "cli-username" (TBD) - > username and password are asked by the script. 
+# VCO_AUTHENTICATION == "cli-token"    (TBD) - > token is  asked by the script. 
+
+
+
+# multi-tenant setup, tenant ID is required. 
+
+# Example: 
+#https://vco206-fra1.velocloud.net/ui/msp/customers/5/sd-wan/monitor/edges/7/overview
+# above is tenant id 5, edge id is 7
+
+
+
+VCO_TOKEN: token
+VCO_TENANT_ID: 1
+
+#Proxy can be True or False. In case it is run outside of company network which typically is behind NAT use True. 
+#In case you have direct connection, use there False
+PROXY_STATE: True
+PROXY_SERVER: "http://sub.proxy.att.com:8080"

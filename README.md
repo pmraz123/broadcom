@@ -27,5 +27,15 @@ source venv/bin/activate
 pip3 install -r requirements.txt 
 ```
 
-TEST:
+### CUSTOMER ONBOARDING
+
+```
+In folder authentication, create file (do copy of cust1_vco_config.yaml to lab_vco_config.yaml)
+Edit lab_vco_config.yaml, fill at least Token, Tenant ID, if you run it from lab set proxy to False, if you do it behind proxy keep there True
+
+```
+
+### VERIFICATION OF THE CODE
+```
 python3 velocloud.p --customer cust1 show-vco-info
+```
