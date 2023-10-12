@@ -18,14 +18,14 @@ git clone https://dev.azure.com/ACC-Azure-05/NGNSD%20Team/_git/velo_sdwan_script
 cd velo_sdwan_scripts
 ```
 ### Creating Python virtual environment - test
-
-python3 -m venv venv
 ```
+python3 -m venv venv
 source venv/bin/activate
-
+```
 ### Install packages: 
+```
 pip3 install -r requirements.txt 
-
+```
 
 TEST:
 python3 velocloud.p --customer cust1 show-vco-info
