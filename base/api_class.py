@@ -234,7 +234,7 @@ class Api_calls:
             "http": self.PROXY_SERVER,
             "https": self.PROXY_SERVER
         }
-        
+        token_error = 0
         headers = {'Authorization': 'Token '+self.VCO_TOKEN}  
         warnings.simplefilter('ignore', InsecureRequestWarning)
         
@@ -247,7 +247,7 @@ class Api_calls:
         elif self.PROXY_STATE == False:
             response = requests.post(f"{self.base_url}" + API , verify=False, json=data, headers=headers, timeout=600)
 
-
+        
         else:
             print("PROXY_STATE in YAML file must be True or False. Exiting...")
 
@@ -255,8 +255,24 @@ class Api_calls:
             print("Response is wrong, maybe wrong API or content of API")
             return (response, False, "no dict")
         
+        
+        
         else:
+            try:
+                #b'{"id":5,"jsonrpc":"2.0","error":{"code":-32000,"message":"tokenError [credential for authentication missing]"}}'
+                #print(response.content)
+                response_content = response.content
+                decoded_json_data = json.loads(response_content.decode())                                
+                error = decoded_json_data["error"]["message"]
+                if error == "tokenError [credential for authentication missing]":
+                    print(colored("Token wrong, exiting the script, error:", 'red'), response_content)
+                    #token_error = 1
+                    return (False, False, False)
+                    exit(0)
 
+            except:
+                #print("try with \"result\" failed")
+                pass                
             try:
                 try:
                     response_content = response.content
