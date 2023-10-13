@@ -1,9 +1,8 @@
-# Cisco Viptela vManage Python script
+# Vmware Velo  Python script
 
-This repo contains a Python script for Cisco Velocloud vManaVCOge developed by Peter Mraz, at&t SDWAN EE. 
+This repo contains a Python script to get data, potentially push to Velocloud's - VCO -  developed by Peter Mraz, at&t SDWAN EE. 
 Tested on macOS Catalyna and ubuntu 20.10.
-Python module requirements will be built and defined later. So far - you can use manual module installation.
-All outputs (pre-deffined) or you will build - can be saved to csv/txt/json (depends on format).
+All outputs (pre-deffined) or you will build - can be saved to csv/txt/json (depends on format).[TBD]
 
 
 
