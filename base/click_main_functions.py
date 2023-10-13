@@ -1210,11 +1210,11 @@ def show_vco_info():
         print("Error code: TypeError")
         raise SystemExit
 
-# Allowed commands
-cli.add_command(get_api_keys)
-cli.add_command(get_api_vco_csv)
-cli.add_command(get_api_json)
-cli.add_command(get_api_devices_csv)
-cli.add_command(get_api_devices_all_csv)
-cli.add_command(get_api_body)
+# Enabled commands
+#cli.add_command(get_api_keys)
+#cli.add_command(get_api_vco_csv)
+#cli.add_command(get_api_json)
+#cli.add_command(get_api_devices_csv)
+#cli.add_command(get_api_devices_all_csv)
+#cli.add_command(get_api_body)
 cli.add_command(show_vco_info)
