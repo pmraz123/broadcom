@@ -1,6 +1,6 @@
 # Vmware Velo  Python script
 
-This repo contains a Python script to get data, potentially push to Velocloud's - VCO -  developed by Peter Mraz, at&t SDWAN EE. 
+This repo contains a Python script to get data, potentially push to Velocloud's - VCO -  developed by Peter Mraz, at&t SDWAN EE.
 Tested on macOS Catalyna and ubuntu 20.10.
 All outputs (pre-deffined) or you will build - can be saved to csv/txt/json (depends on format).[TBD]
 
