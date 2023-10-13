@@ -12,10 +12,17 @@ All outputs (pre-deffined) or you will build - can be saved to csv/txt/json (dep
 * Python 3.6+
 
 ## Installation
+(prepare your git username/pasword, as it is not well open repo, you need access and authentication will be required)
 
+This is server: https://dev.azure.com/ACC-Azure-05/NGNSD%20Team/
 
 ```
 git clone https://dev.azure.com/ACC-Azure-05/NGNSD%20Team/_git/velo_sdwan_scripts
+```
+
+You will be asked for username and password, once clone is completed execute:
+
+```
 cd velo_sdwan_scripts
 ```
 ### Creating Python virtual environment - venv
