@@ -67,7 +67,8 @@ Edit lab_vco_config.yaml and fill:
 #############################################
 VCO_HOST: VCO_DNS
 VCO_PORT: 443
-CUSTOMER_NAME: "CUSTOMER_NAME"
+#CUSTOMER_NAME: "CUSTOMER_NAME_HOW_YOU_WAN_TO_CALL_IT_NOTHING_WHAT_MUST_MATCH_WITH_VCO"
+CUSTOMER_NAME: "Customer 1"
 # this keep "yaml"
 VCO_AUTHENTICATION: "yaml"
 
