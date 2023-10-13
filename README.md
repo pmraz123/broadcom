@@ -11,10 +11,27 @@ All outputs (pre-deffined) or you will build - can be saved to csv/txt/json (dep
 ## Requirements
 * Python 3.6+
 
-## Installation
-(prepare your git username/pasword, as it is not well open repo, you need access and authentication will be required)
 
-This is server: https://dev.azure.com/ACC-Azure-05/NGNSD%20Team/
+## How to Obtain Git Credentials for Azure DevOps
+
+```
+If you want to access a repository on Azure DevOps using Git, you'll need Git credentials. Here's how to generate them:
+
+1. **Navigate to your Azure DevOps project**.
+2. **Go to the repository you want to access**.
+3. **Click on the "Clone" button** to get the repository URL.
+4. **Click on "Generate Git Credentials"**.
+5. **You will be prompted to create a Personal Access Token (PAT)**. Follow the prompts to create a token with the necessary permissions for your repository.
+6. **Copy the generated PAT**.
+7. **Use the copied PAT as your Git username** and leave the password blank when you are prompted for authentication.
+
+Now you can use the copied PAT as your Git username when cloning the repository or performing Git operations.
+**Note**: Ensure you keep your PAT secure and do not share it with others.
+```
+
+## Installation
+
+Prepare your git username/pasword generated in previous section. 
 
 ```
 git clone https://dev.azure.com/ACC-Azure-05/NGNSD%20Team/_git/velo_sdwan_scripts
