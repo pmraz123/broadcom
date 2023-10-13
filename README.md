@@ -39,3 +39,11 @@ Edit lab_vco_config.yaml, fill at least Token, Tenant ID, if you run it from lab
 ```
 python3 velocloud.p --customer cust1 show-vco-info
 ```
+
+### SECURE-CRT
+
+```
+It is recommended to have Character Code in Secure CRT set to UTF-8
+Session Options -> Terminal -> Appearance -> Character Encoding - > Set to UTF-8
+Otherwise some outputs may be printed well
+```
