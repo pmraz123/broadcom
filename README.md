@@ -54,10 +54,14 @@ pip3 install -r requirements.txt
 
 ### CUSTOMER ONBOARDING
 
-```
-In folder authentication, create customer specific file. (do copy of cust1_vco_config.yaml to lab_vco_config.yaml)
 
-cust1, cust2 or lab in front of "_vco_config.yaml" will be later used in the script, name it to identify your customer easily. 
+In folder authentication, create customer specific file. (do copy of cust1_vco_config.yaml to lab_vco_config.yaml, where "lab" in the future will be 
+used to define what yaml file should be called. 
+
+cust1, cust2 or lab in front of "_vco_config.yaml" will be later used in the script, name it to identify your customer easily.
+
+Example of yaml file with explanation:
+```
 #############################################
 Edit lab_vco_config.yaml and fill:
 #############################################
