@@ -91,11 +91,18 @@ class Api_calls:
         
 
         
-        # TODO - > complete this function.
-        
-
+#---------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------- 
+#                               API v1 (not expand much, lets use API v2)       
+# https://developer.vmware.com/apis/1237/ 
+#---------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------        
         #---------------------------------------------------------------------------------------------------------------------
         # description of API:API will get list of Edges for specific tenant 
+        # API v1
+        #---------------------------------------------------------------------------------------------------------------------
         self.getEnterpriseEdges_API = "/portal/rest/enterprise/getEnterpriseEdges"
         self.getEnterpriseEdges_JSON_BODY = {
                             "enterpriseId": int(self.VCO_TENANT_ID),
@@ -127,8 +134,9 @@ class Api_calls:
         #     dtype='object')
         #---------------------------------------------------------------------------------------------------------------------
         # description of API:API will get list of Edges for specific tenant 
-#         keys=["name", "id", "modelNumber", "softwareVersion", "dnsName",  "description", "serviceState", "haMode", "isHub", "customInfo", 'description']
-    
+        # API v1
+        #---------------------------------------------------------------------------------------------------------------------
+        # keys=["name", "id", "modelNumber", "softwareVersion", "dnsName",  "description", "serviceState", "haMode", "isHub", "customInfo", 'description']
         self.getEnterprise_API = "/portal/"        
         self.getEnterprise_JSON_BODY =  {
         "id": self.VCO_TENANT_ID,
@@ -154,8 +162,10 @@ class Api_calls:
         #   dtype='object')
 
         #---------------------------------------------------------------------------------------------------------------------
-        self.getNetworkOverviewInfo_API = "/portal/"  
-        # id is the most likely what type of API call, hard to say :)    
+        # description of API:API will get list of Edges for specific tenant 
+        # API v1
+        #--------------------------------------------------------------------------------------------------------------------- 
+        self.getNetworkOverviewInfo_API = "/portal/"   
         self.getNetworkOverviewInfo_JSON_BODY =  {
           "id": 7,
           "jsonrpc": "2.0",
@@ -210,10 +220,36 @@ class Api_calls:
         #   },
         #   "id": 7
         # }
-        #---------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------------- 
+#                               API v2 (path to go)        
+# https://developer.vmware.com/apis/vmware-sase-platform/vmware-sdwan/latest/api/sdwan/v2/enterprises/enterpriseLogicalId/edges/get/
+#---------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------  
+
+
+
         
-         
-                
+        
+        
+        #---------------------------------------------------------------------------------------------------------------------            
+        # Description: get list of Edges 
+        # https://developer.vmware.com/apis/vmware-sase-platform/vmware-sdwan/latest/api/sdwan/v2/enterprises/enterpriseLogicalId/edges/get/
+        # API v2
+        #---------------------------------------------------------------------------------------------------------------------          
+        #curl https://{api_host}/api/sdwan/v2/enterprises/{enterpriseLogicalId}/edges
+        
+# Customer LogicalId
+
+# A Customer logicalId, also known as enterpriseLogicalId in API terminology, is an important path parameter required for any API request related to a specific Customer and its resources. Currently, APIv2 doesn’t support fetching a Customer logicalId from its id, or equivalently enterpriseId. One needs to call APIv1, the VCO Portal API, to fetch the Customer logicalId using its id before sending any request to APIv2 that requires enterpriseLogicalId. The process to determine a Customer logicalId is described below:
+
+#     Step 1: Determine the Customer id (or enterpriseId) from URL path. On any of the Customer pages, check the URL path in the browser’s URL address bar and it should end with /customer/<id> where <id> is the place you find your Customer id, represented as an integer.
+#     Step 2: Make an HTTP POST call to /enterprise/getEnterprise in APIv1. Now that you have your Customer id, you are ready to make an HTTP POST call to the /enterprise/getEnterprise endpoint in the VCO Portal API to fetch your Customer logicalId using your Customer id. See VMware SD-WAN Orchestrator API v1 for more details regarding how to send requests to and interpret responses from the VCO Portal API.
+
+
+        
 ##################################
 # VCO API:
 ##################################
@@ -264,11 +300,12 @@ class Api_calls:
                 response_content = response.content
                 decoded_json_data = json.loads(response_content.decode())                                
                 error = decoded_json_data["error"]["message"]
-                if error == "tokenError [credential for authentication missing]":
+                #print(error)
+                if error == "tokenError [credential for authentication missing]" or error == "tokenError [Invalid API Token]":
                     print(colored("Token wrong, exiting the script, error:", 'red'), response_content)
                     #token_error = 1
                     return (False, False, False)
-                    exit(0)
+                    
 
             except:
                 #print("try with \"result\" failed")
@@ -278,6 +315,7 @@ class Api_calls:
                     response_content = response.content
                     decoded_json_data = json.loads(response_content.decode())
                     decoded_json_data = replace_null_values_with_empty_string(decoded_json_data)
+                    #print(decoded_json_data["result"])
                     #print("try with \"result\" OK")                  
                     return (decoded_json_data, True, "dict")
                 
@@ -295,7 +333,7 @@ class Api_calls:
                 except:
                     #print("try without \"result\" failed")
                     pass
-                return (df, True, "no dict")
+                #return (df, True, "no dict")
             except:
                 return (response, True, "other")
         
